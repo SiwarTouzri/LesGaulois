@@ -3,6 +3,7 @@ package personnages;
 public class Romain {
 	private String nom;
 	private int force;
+	private String texte ;
 	
 	public Romain(String nom, int force) {
 		this.nom = nom;
@@ -16,12 +17,37 @@ public class Romain {
 		return "Le romain" + nom +" : ";
 	 } 
 	 
-	 public void recevoirCoup(int forceCoup) {
-		 force -= forceCoup;
-		 if (force > 0) {
-			 parler("Aie");
-		 } else { 
-			 parler("j'abondonne...");
-		 }
-	 }
+	 public Equipement[] recevoirCoup(int forceCoup) {
+
+//		 force -= forceCoup;
+//		 if (force > 0) {
+//			 parler("Aie");
+//		 } else { 
+//			 parler("j'abondonne...");
+//		 }
+//	 }
+	 	Equipement[] equipementEjecte = null;
+	 	// précondition
+	 	assert force > 0;
+	 	int oldForce = force;
+	 	forceCoup = CalculResistanceEquipement(forceCoup);
+	 	force -= forceCoup;
+	 	// if (force > 0) {
+	 	// parler("Aïe");
+	 	// } else {
+	 	// equipementEjecte = ejecterEquipement();
+	 	// parler("J'abandonne...");
+	 	// }
+	 	switch (force) {
+	 	case 0:
+	 		parler("Aïe");
+	 	default:
+	 		equipementEjecte = ejecterEquipement();
+	 		parler("J'abandonne...");
+	 		break;
+		}
+		// post condition la force a diminuée
+		assert force < oldForce;
+		return equipementEjecte;
+
 }
