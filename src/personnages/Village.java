@@ -3,7 +3,7 @@ package personnages ;
 public class Village {
 	private String nom ;
 	private Chef chef;
-	private Gaulois []villageois ; 
+	private Gaulois[] Villageois ; 
 	private int nbVillageois ; 
 	private int numvillageois ; 
 	private int numHabitant ;
@@ -28,26 +28,22 @@ public class Village {
 
 	}
 	public void ajouterHabitant (Gaulois gaulois ) {
-		villageois[nbVillageois]=gaulois ;	
+		Villageois[nbVillageois++]=gaulois ;	
 		nbVillageois+=1  ;
 		
 	}
 	public void force (int force ) {
 		this.force=force ; 
 	}
-	public void trouverHabitant (int numvillageois) {
-		this.numvillageois =numvillageois ;
+	public Gaulois trouverHabitant (int numvillageois) {
+		return Villageois[numvillageois] ;
 		
 	}
-	public static void VillagesdesIrreductibles (Village VillagedesIrreductibles  ) {
-		int numvillageois =30;
-		Chef Abraracourcix = new setChef ;
-		Abraracourcix = new force (8) ;
-		
-		
-		
-		
-		
-		
-	}
+	public void afficherVillageois() {
+
+        System.out.println("Dans le village du chef " + this.chef.getNom() + "Vivent les legendaires gaulois : ");
+        for (int i = 0; i < nbVillageois; i++) {
+            System.out.println(Villageois[i].getNom());
+        }
+    }
 }

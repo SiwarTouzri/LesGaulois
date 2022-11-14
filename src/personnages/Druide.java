@@ -9,7 +9,7 @@ public class Druide {
 	this.nom = nom;
 	this.effetPotionMin = effetPotionMin;
 	this.effetPotionMax = effetPotionMax;
-	parler("Bonjour, je suis le druide " + nom + " et ma potion peut allerd'une force " + effetPotionMin + " à "+ effetPotionMax + ".");
+	parler("Bonjour, je suis le druide " + nom + " et ma potion peut allerd'une force " + effetPotionMin + " ï¿½ "+ effetPotionMax + ".");
 	}
 	
 	public String getNom() {
@@ -17,7 +17,7 @@ public class Druide {
 	}
 	
 	public void parler(String texte) {
-	System.out.println(prendreParole() + "« " + texte + "»");
+	System.out.println(prendreParole() + "ï¿½ " + texte + "ï¿½");
 	}
 	private String prendreParole() {
 		return "Le druide " + nom + " : ";
