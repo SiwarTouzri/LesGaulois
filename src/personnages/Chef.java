@@ -24,5 +24,13 @@ public class Chef {
 		romain.recevoirCoup(force / 3);
 	}
 	
+	public static void main (String[]args ) {
+		Village v1 = new Village ("village") ; 
+		Chef chef1 = new Chef ("ast", 5 ,v1); 
+		chef1.parler("HAHAHAH"); 
+		
+		
+	}
+	
 
 }
