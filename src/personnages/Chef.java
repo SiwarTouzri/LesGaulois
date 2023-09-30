@@ -25,7 +25,7 @@ public class Chef {
 	}
 	
 	public static void main (String[]args ) {
-		Village v1 = new Village ("village") ; 
+		Village v1 = new Village ("village",30) ; 
 		Chef chef1 = new Chef ("ast", 5 ,v1); 
 		chef1.parler("HAHAHAH"); 
 		

@@ -28,6 +28,7 @@ public class Druide {
 			parler("Je n'ai pas trouvé tous les ingrédients, " + " ma potion est seulement de force : " + puissance);
 		}
 		setForcePotion(puissance) ;  
+		
 
 	}
 	public void setForcePotion(int potion) {
