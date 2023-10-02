@@ -9,7 +9,8 @@ public enum Equipement  {
 	private Equipement (String nom) {
 		this.nom = nom ; 
 	}
-	public String toSting() {
+	public String tosting() {
+		System.out.println("DEBUG");
 		return nom ; 
 	}
 	
