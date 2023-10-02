@@ -10,7 +10,6 @@ public enum Equipement  {
 		this.nom = nom ; 
 	}
 	public String tosting() {
-		System.out.println("DEBUG");
 		return nom ; 
 	}
 	
