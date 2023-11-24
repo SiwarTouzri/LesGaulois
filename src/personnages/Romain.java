@@ -12,6 +12,9 @@ public class Romain {
 	public String getNom() {
 		return nom;
 	}
+	public int getForce() {
+		return force ; 
+	}
 	public void parler(String texte) {
 		System.out.println(prendreParole() + "« " + texte + "»");
 	}
@@ -37,6 +40,8 @@ public class Romain {
 		Logger.logg("Le soldat " + nom + " s'equipe d'un " + equipement + " .");
 	}
 	
+	
+	
 	public void sEquiper(Equipement equipement) {
 		switch (nbEquipement) {
 		case 2 :
@@ -60,7 +65,6 @@ public class Romain {
 	private Equipement[] ejecterEquipement() {
 		Equipement[] equipementEjecte = new Equipement[nbEquipement];
 		System.out.println("L'équipement de " + nom.toString() + "s'envole sous la force du coup.");
-		//TODO
 		int nbEquipementEjecte = 0;
 		for (int i = 0; i < nbEquipement; i++) {
 			if (equipements[i] == null) {
@@ -75,7 +79,19 @@ public class Romain {
 		return equipementEjecte;
 	}
 
-			
+	private boolean possedeEquipement(Equipement equipement) {
+		for(int i = 0; i < this.nbEquipement; i++) {
+			if(this.equipements[i] == equipement) {
+				return true;
+			}
+		}
+		return false;
+	}
+	
+	private void ajouteEquipement(Equipement equipement) {
+		this.equipements[this.nbEquipement++] = equipement;
+		System.out.println("Le soldat " + this.nom + " s'équipe avec un " + equipement + ".");
+	}		
 			
 			
 			
@@ -125,6 +141,7 @@ public class Romain {
 		assert force < oldForce;
 		return equipementEjecte;
 	}
+	
 	
 	public static void main (String[] args ) {
 		Romain minus = new Romain("Minus" ,6); 

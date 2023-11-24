@@ -1,23 +1,33 @@
 package histoire;
-import personnages.Gaulois ;
+import personnages.Gaulois;
+import village.Musee;
 import personnages.Druide;
+import personnages.Equipement;
 import personnages.Romain;
 
 public class Scenario {
 
 	public static void main(String[] args) {
-		Gaulois gaulois1 = new Gaulois("Asterix", 8);
-		Gaulois gaulois2 = new Gaulois("Obelix", 25);
-		Romain romain1 = new Romain("minus", 6);
-		Druide druide1 = new Druide("Panoramix",5, 10);
-		//eviter d'utliser Majus dans druide1//
-		System.out.println(druide1);
-		druide1.parler("Je vais aller préparer une petite potion");
-		druide1.preparerPotion(10);
-		druide1.booster(gaulois2);
-		gaulois2.boirePotion(6);
-		romain1.recevoirCoup(8);
+		Druide panoramix = new Druide("Panoramix",5,10);
+		Gaulois obelix = new Gaulois("Obelix",10);
+		Gaulois asterix = new Gaulois("Asterix",8);
+		Romain minus = new Romain("Minus",6);
+		minus.sEquiper(Equipement.CASQUE);
+		minus.sEquiper(Equipement.BOUCLIER);
+		panoramix.parler("Je vais aller preparer une petite potion...");
+		panoramix.preparerPotion(10);
+		panoramix.booster(obelix);
+		obelix.parler("Par Belenos, ce n'est pas juste !");
+		panoramix.booster(asterix);
+		asterix.parler("Bonjour a tous");
+		minus.parler("UN GAU... UN GAUGAU...");
+		asterix.frapper(minus);
+		asterix.frapper(minus);
+		asterix.frapper(minus);
+		asterix.frapper(minus);
+		Musee musee = new Musee();
+		asterix.faireUneDonnation(musee);
+		System.out.println(musee.extraireInstructionsCaml());
 		
-		
-		}
+	}
 }
